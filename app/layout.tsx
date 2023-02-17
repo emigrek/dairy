@@ -1,3 +1,5 @@
+import Footer from "../components/Footer";
+import Header from "../components/Header";
 import "../styles/globals.css";
 
 interface Props {
@@ -7,8 +9,12 @@ interface Props {
 function Layout({ children }: Props) {
   return (
     <html>
-      <head />
-      <body>{children}</body>
+      <head/>
+      <body className="container max-w-3xl mx-auto">
+        <Header/>
+        { children }
+        <Footer/>
+      </body>
     </html>
   )
 }

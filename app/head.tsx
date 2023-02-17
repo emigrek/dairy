@@ -1,7 +1,7 @@
 function Head() {
   return (
     <>
-      <title>Dairy</title>
+      <title>dairy</title>
       <meta content="width=device-width, initial-scale=1" name="viewport" />
       <link rel="icon" href="/favicon.ico" />
     </>
