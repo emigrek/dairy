@@ -1,11 +1,16 @@
-import React from 'react'
-import Welcome from '../components/Welcome'
+import Welcome from '../components/Welcome';
+import { client } from '../sanity/sanity.client';
+import { recentPostsQuery } from '../queries/posts';
+import Recent from '../components/Recent';
 
-function Home() {
+async function Home() {
+  const recent = await client.fetch(recentPostsQuery);
+
   return (
-    <div>
+    <>
       <Welcome/>
-    </div>
+      <Recent posts={recent}/>
+    </>
   )
 }
 

@@ -8,5 +8,5 @@ const items: HeaderItem[] = [
     { label: 'Categories', href: '/categories' },
     { label: 'About', href: '/about' },
 ];
-    
+
 export default items;
