@@ -6,9 +6,9 @@ function Navbar() {
     return (
         <div className="py-5 border-b-[1px] border-base-200 navbar">
             <div className="flex-1">
-                <a href="/" className="text-3xl normal-case btn btn-ghost">
+                <Link href="/" className="text-3xl normal-case btn btn-ghost">
                     <Logo />
-                </a>
+                </Link>
             </div>
             <div className="flex-none">
                 <ul className="px-1 space-x-1 menu menu-horizontal">

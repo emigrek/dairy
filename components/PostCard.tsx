@@ -20,6 +20,13 @@ function Post({ post }: Props) {
                 <div className="justify-end card-actions">
                     {post.categories.map((category) => <CategoryBadge key={category._id} category={category} />)}
                 </div>
+                <p className="text-sm">{
+                    new Date(post._createdAt).toLocaleDateString('en-US', {
+                        day: 'numeric',
+                        month: 'long',
+                        year: 'numeric'
+                    })
+                }</p>
             </div>
         </Link>
     )
