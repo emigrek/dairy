@@ -2,7 +2,7 @@ import { PortableText } from '@portabletext/react'
 import Image from 'next/image'
 import PostHeader from '../../../components/PostHeader'
 import RichTextComponents from '../../../components/RichTextComponents'
-import { postQuery } from '../../../queries/posts'
+import { allPostsSlugsQuery, postQuery } from '../../../queries/posts'
 import { client } from '../../../sanity/sanity.client'
 import { urlFor } from '../../../sanity/urlFor'
 
@@ -10,6 +10,16 @@ type Props = {
   params: {
     slug: string
   }
+}
+
+export const revalidate = 60;
+
+export async function generateStaticParams() {
+  const slugs: Post[] = await client.fetch(allPostsSlugsQuery);
+  const routes = slugs.map((slug) => slug.slug.current);
+  return routes.map(slug => ({
+    slug: slug
+  }))
 }
 
 async function Post({ params: { slug } }: Props) {

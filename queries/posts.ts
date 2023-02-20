@@ -8,6 +8,12 @@ const allPostsQuery = groq`
     }
 `;
 
+const allPostsSlugsQuery = groq`
+    *[_type == "post"] {
+        slug
+    }
+`;
+
 const recentPostsQuery = groq`
     *[_type == "post"][0..3] {
         ...,
@@ -36,4 +42,4 @@ const postQuery = function (slug: string) {
     `;
 };
 
-export { allPostsQuery, recentPostsQuery, categoryPostsQuery, postQuery };
+export { allPostsQuery, recentPostsQuery, categoryPostsQuery, allPostsSlugsQuery, postQuery };

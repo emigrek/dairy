@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
 import { urlFor } from "../sanity/urlFor";
 import CategoryBadge from "./CategoryBadge";
+import ClientLink from "./ClientLink";
 
 type Props = {
     post: Post;
@@ -9,7 +9,7 @@ type Props = {
 
 function Post({ post }: Props) {
     return (
-        <Link href={`/post/${post.slug.current}`} className="transition card bg-base-200 drop-shadow-sm hover:drop-shadow-lg image-full hover:scale-105">
+        <ClientLink href={`/post/${post.slug.current}`} className="transition card bg-base-200 drop-shadow-sm hover:drop-shadow-lg image-full hover:scale-105">
             <figure className="relative">
                 <Image alt={post.title} src={urlFor(post.mainImage).url()} fill />
             </figure>
@@ -28,7 +28,7 @@ function Post({ post }: Props) {
                     })
                 }</p>
             </div>
-        </Link>
+        </ClientLink>
     )
 }
 

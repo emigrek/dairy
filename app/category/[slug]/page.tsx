@@ -1,5 +1,5 @@
 import PostsGrid from "../../../components/PostsGrid"
-import { categoryQuery } from "../../../queries/categories"
+import { allCategoriesSlugsQuery, categoryQuery } from "../../../queries/categories"
 import { categoryPostsQuery } from "../../../queries/posts"
 import { client } from "../../../sanity/sanity.client"
 
@@ -7,6 +7,16 @@ type Props = {
     params: {
         slug: string
     }
+}
+
+export const revalidate = 60;
+
+export async function generateStaticParams() {
+    const slugs: Category[] = await client.fetch(allCategoriesSlugsQuery);
+    const routes = slugs.map((slug) => slug.slug.current);
+    return routes.map(slug => ({
+        slug: slug
+    }))
 }
 
 async function Category({ params: { slug } }: Props) {
