@@ -9,7 +9,7 @@ type Base = {
 interface Post extends Base {
     author: Author;
     title: string;
-    slug: string;
+    slug: Slug;
     mainImage: Image;
     body: Block[];
     categories: Category[];
@@ -54,7 +54,7 @@ interface Span {
 
 interface Category extends Base {
     title: string;
-    description: string;
+    slug: Slug;
 }
 
 interface MainImage {

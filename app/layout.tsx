@@ -1,5 +1,5 @@
 import Footer from "../components/Footer";
-import Header from "../components/Header";
+import Navbar from "../components/Navbar";
 import "../styles/globals.css";
 
 interface Props {
@@ -11,7 +11,7 @@ function Layout({ children }: Props) {
     <html>
       <head/>
       <body className="container max-w-3xl mx-auto">
-        <Header/>
+        <Navbar/>
         { children }
         <Footer/>
       </body>

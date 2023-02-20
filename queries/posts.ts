@@ -16,4 +16,24 @@ const recentPostsQuery = groq`
     } | order(_createdAt desc)
 `;
 
-export { allPostsQuery, recentPostsQuery };
+const categoryPostsQuery = function (categorySlug: string) {
+    return groq`
+        *[_type == "post" && references(*[_type == "category" && slug.current == "${categorySlug}"][0]._id)] {
+            ...,
+            author->,
+            categories[]->
+        }
+    `;
+}
+
+const postQuery = function (slug: string) {
+    return groq`
+        *[_type == "post" && slug.current == "${slug}"] {
+            ...,
+            author->,
+            categories[]->
+        }[0]
+    `;
+};
+
+export { allPostsQuery, recentPostsQuery, categoryPostsQuery, postQuery };

@@ -1,5 +1,5 @@
-import { ArrowRightIcon } from '@heroicons/react/24/solid'
-import Post from './Post';
+import { ArrowRightIcon } from '@heroicons/react/24/solid';
+import PostsGrid from './PostsGrid';
 
 type Props = {
     posts: Post[]
@@ -14,15 +14,7 @@ function Recent({ posts }: Props) {
                     See all <ArrowRightIcon className="w-4 h-4" />
                 </a>
             </div>
-            {
-                posts.length ? (
-                    <div className="grid grid-cols-1 gap-4 mt-4 sm:grid-cols-2 lg:grid-cols-3">
-                        {posts.map((post) => <Post key={post._id} post={post} />)}
-                    </div>
-                ) : (
-                    <p className="py-8 text-center text-opacity-50 text-base-content">No posts yet.</p>
-                )
-            }
+            <PostsGrid posts={posts} />
         </div>
     )
 }

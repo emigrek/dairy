@@ -1,12 +1,12 @@
-interface HeaderItem {
+interface NavbarItem {
     label: string;
     href: string;
 }
 
-const items: HeaderItem[] = [
+const items: NavbarItem[] = [
     { label: 'Posts', href: '/posts' },
     { label: 'Categories', href: '/categories' },
-    { label: 'About', href: '/about' },
+    { label: 'Authors', href: '/authors' },
 ];
 
 export default items;

@@ -1,7 +1,8 @@
+import Link from 'next/link';
 import Logo from './Logo'
-import items from './HeaderItems';
+import items from './NavbarItems';
 
-function Header() {
+function Navbar() {
     return (
         <div className="py-5 border-b-[1px] border-base-200 navbar">
             <div className="flex-1">
@@ -13,7 +14,7 @@ function Header() {
                 <ul className="px-1 space-x-1 menu menu-horizontal">
                     {
                         items.map((item, index) => (
-                            <li key={index}><a href={item.href}>{item.label}</a></li>
+                            <li key={index}><Link href={item.href}>{item.label}</Link></li>
                         ))
                     }
                 </ul>
@@ -22,4 +23,4 @@ function Header() {
     )
 }
 
-export default Header
+export default Navbar

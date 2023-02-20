@@ -1,10 +1,10 @@
 type Props = {
-    category: Category
+  category: Category
 }
 
 function CategoryBadge({ category }: Props) {
   return (
-    <div className="badge badge-outline">{ category.title }</div>
+    <div className="badge bg-base-300">{category.title}</div>
   )
 }
 
