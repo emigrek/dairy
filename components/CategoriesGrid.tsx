@@ -5,7 +5,7 @@ type Props = {
 }
 
 function CategoriesGrid({ categories }: Props) {
-    if(!categories.length) return <p className="py-8 text-center text-opacity-50 text-base-content">No categories yet.</p>
+    if (!categories.length) return <p className="py-8 text-center text-opacity-50 text-base-content">No categories yet.</p>
 
     return (
         <div className="grid grid-cols-1 gap-4 mt-4 sm:grid-cols-2 lg:grid-cols-3">

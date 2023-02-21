@@ -2,12 +2,16 @@ import Image from 'next/image'
 import React from 'react'
 import { urlFor } from '../sanity/urlFor'
 import CategoryBadge from './CategoryBadge'
+const readingTime = require('reading-time');
 
 type Props = {
     post: Post
 }
 
 function PostHeader({ post }: Props) {
+    const raw = post.body.map((block) => block.children.map((child) => child.text)).join(' ');
+    const { text } = readingTime(raw);
+
     return (
         <div className='flex gap-3 mt-2'>
             <div className="relative w-12 h-12">
@@ -21,9 +25,9 @@ function PostHeader({ post }: Props) {
                         month: 'long',
                         year: 'numeric'
                     })
-                }</p>
+                } · {text}</p>
             </div>
-            <div className='flex justify-end flex-grow gap-1'>
+            <div className='justify-end flex-grow hidden gap-1 sm:flex'>
                 {post.categories.map((category) => <CategoryBadge key={category._id} category={category} />)}
             </div>
         </div>
