@@ -10,6 +10,7 @@ AI powered blog
 | Sanity | headless cms  |
 | Hero Icons | Icons |
 | daisyui | Tailwind CSS components |
+| reading-time | medium like reading time |
 
 ## 🚀 Running
 ```
