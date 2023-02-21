@@ -18,7 +18,9 @@ function Layout({ children }: Props) {
       <head />
       <body className="container max-w-3xl mx-auto">
         <Navbar />
-        {children}
+        <main>
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
