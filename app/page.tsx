@@ -4,7 +4,7 @@ import { recentPostsQuery } from '../queries/posts';
 import Recent from '../components/Recent';
 
 async function Home() {
-  const recent = await client.fetch(recentPostsQuery);
+  const recent: Post[] = await client.fetch(recentPostsQuery);
 
   return (
     <>

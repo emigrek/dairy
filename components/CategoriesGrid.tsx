@@ -1,7 +1,7 @@
 import CategoryCard from "./CategoryCard"
 
 type Props = {
-    categories: Post[]
+    categories: Category[]
 }
 
 function CategoriesGrid({ categories }: Props) {

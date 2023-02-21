@@ -1,4 +1,5 @@
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
+import Link from 'next/link';
 import PostsGrid from './PostsGrid';
 
 type Props = {
@@ -10,9 +11,9 @@ function Recent({ posts }: Props) {
         <div className="px-4 py-5 border-t-[1px] border-base-200 flex flex-col gap-3">
             <div className="flex items-center justify-between">
                 <h1 className="text-2xl font-semibold">Recent posts</h1>
-                <a href="/posts" className="inline-flex items-center gap-2 link-accent link-hover">
+                <Link href="/posts" className="inline-flex items-center gap-2 link-accent link-hover">
                     See all <ArrowRightIcon className="w-4 h-4" />
-                </a>
+                </Link>
             </div>
             <PostsGrid posts={posts} />
         </div>

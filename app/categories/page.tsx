@@ -3,7 +3,7 @@ import { allCategoriesQuery } from "../../queries/categories"
 import { client } from "../../sanity/sanity.client"
 
 async function Categories() {
-  const categories = await client.fetch(allCategoriesQuery);
+  const categories: Category[] = await client.fetch(allCategoriesQuery);
 
   return (
     <div className="flex flex-col gap-3 px-4 py-5">
