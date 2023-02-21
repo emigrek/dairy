@@ -1,4 +1,3 @@
-import Link from "next/link";
 import ClientLink from "./ClientLink";
 
 type Props = {
@@ -7,11 +6,13 @@ type Props = {
 
 function CategoryCard({ category }: Props) {
     return (
-        <ClientLink href={`/category/${category.slug.current}`} className="transition card bg-base-200 drop-shadow-sm hover:drop-shadow-lg hover:scale-105">
-            <div className="card-body">
-                <h3 className="card-title">
-                    {category.title}
-                </h3>
+        <ClientLink href={`/category/${category.slug.current}`}>
+            <div className="transition card bg-base-200 drop-shadow-sm hover:drop-shadow-lg hover:scale-105">
+                <div className="card-body">
+                    <h3 className="card-title">
+                        {category.title}
+                    </h3>
+                </div>
             </div>
         </ClientLink>
     )

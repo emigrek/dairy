@@ -28,7 +28,7 @@ function PostHeader({ post }: Props) {
                 } · {text}</p>
             </div>
             <div className='justify-end flex-grow hidden gap-1 sm:flex'>
-                {post.categories.map((category) => <CategoryBadge key={category._id} category={category} />)}
+                {post.categories.map((category) => <CategoryBadge link key={category._id} category={category} />)}
             </div>
         </div>
     )

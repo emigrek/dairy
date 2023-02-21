@@ -9,24 +9,26 @@ type Props = {
 
 function Post({ post }: Props) {
     return (
-        <ClientLink href={`/post/${post.slug.current}`} className="transition card bg-base-200 drop-shadow-sm hover:drop-shadow-lg image-full hover:scale-105">
-            <figure className="relative">
-                <Image alt={post.title} src={urlFor(post.mainImage).url()} fill />
-            </figure>
-            <div className="card-body">
-                <h3 className="card-title">
-                    {post.title}
-                </h3>
-                <div className="justify-end card-actions">
-                    {post.categories.map((category) => <CategoryBadge key={category._id} category={category} />)}
+        <ClientLink href={`/post/${post.slug.current}`}>
+            <div className="transition card bg-base-200 drop-shadow-sm hover:drop-shadow-lg image-full hover:scale-105">
+                <figure className="relative">
+                    <Image alt={post.title} src={urlFor(post.mainImage).url()} fill />
+                </figure>
+                <div className="card-body">
+                    <h3 className="card-title">
+                        {post.title}
+                    </h3>
+                    <div className="justify-end card-actions">
+                        {post.categories.map((category) => <CategoryBadge key={category._id} category={category} />)}
+                    </div>
+                    <p className="text-sm">{
+                        new Date(post._createdAt).toLocaleDateString('en-US', {
+                            day: 'numeric',
+                            month: 'long',
+                            year: 'numeric'
+                        })
+                    }</p>
                 </div>
-                <p className="text-sm">{
-                    new Date(post._createdAt).toLocaleDateString('en-US', {
-                        day: 'numeric',
-                        month: 'long',
-                        year: 'numeric'
-                    })
-                }</p>
             </div>
         </ClientLink>
     )

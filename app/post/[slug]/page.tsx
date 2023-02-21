@@ -39,7 +39,7 @@ async function Post({ params: { slug } }: Props) {
           <Image priority src={urlFor(post.mainImage).url()} alt={post.title} fill />
         </div>
         <div className='flex justify-center flex-grow gap-1 sm:hidden'>
-          {post.categories.map((category: Category) => <CategoryBadge key={category._id} category={category} />)}
+          {post.categories.map((category: Category) => <CategoryBadge link key={category._id} category={category} />)}
         </div>
         <article>
           <PortableText value={post.body} components={RichTextComponents} />
