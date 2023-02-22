@@ -9,7 +9,7 @@ function CategoryBadge({ category, link }: Props) {
   if (link) {
     return (
       <ClientLink href={`/category/${category.slug.current}`}>
-        <div className="badge bg-base-300">
+        <div className="badge bg-base-200">
           {category.title}
         </div>
       </ClientLink>
@@ -17,7 +17,7 @@ function CategoryBadge({ category, link }: Props) {
   }
   else {
     return (
-      <div className="badge bg-base-300">
+      <div className="badge bg-base-200">
         {category.title}
       </div>
     )

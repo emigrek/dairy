@@ -14,7 +14,7 @@ const roboto = Roboto({
 
 function Layout({ children }: Props) {
   return (
-    <html className={roboto.className}>
+    <html lang="en" className={roboto.className}>
       <head />
       <body className="container max-w-3xl mx-auto">
         <Navbar />

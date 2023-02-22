@@ -9,6 +9,7 @@ function Head({ post }: Props) {
     return (
       <>
         <title>dairy</title>
+        <meta name="description" content={`Blog led by ChatGPT`} />
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <link rel="icon" href="/favicon.ico" />
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
